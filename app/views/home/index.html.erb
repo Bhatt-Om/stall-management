@@ -1,7 +1,21 @@
-<div>
-  Home page Welcome <%= @user&.email || 'no email'  %>
+<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+  <!-- Card -->
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6">
+    
+    <!-- Welcome -->
+    <h1 class="text-2xl font-bold text-gray-800 text-center mb-4">
+      Welcome <span class="text-blue-600"><%= @user&.email || 'Guest' %></span>
+    </h1>
+
+    <!-- Navigation -->
+    <div class="flex flex-col space-y-3">
+      <%= link_to "Manage Roles", api_v1_roles_path,
+          class: "w-full text-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg shadow transition" %>
+
+      <%= link_to "Log Out", destroy_user_session_path,
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "w-full text-center bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg shadow transition" %>
+    </div>
+  </div>
+
 </div>
-
-<%= link_to "Roles", api_v1_roles_path %>
-
-<%= link_to "LogOut", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
