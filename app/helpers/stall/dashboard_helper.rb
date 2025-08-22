@@ -1,0 +1,2 @@
+module Stall::DashboardHelper
+end

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :customer do
+    get "dashboard", to: "dashboard#index", as: :dashboard
+  end
+  namespace :stall do
+    get "dashboard", to: "dashboard#index", as: :dashboard
+  end
+  namespace :admin do
+    get "dashboard", to: "dashboard#index", as: :dashboard
+  end
   get "path_configuration/index"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
