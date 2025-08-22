@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  belongs_to :role, optional: true
+
   before_create :set_default_role, if: -> { role_id.nil? }
 
   def self.authenticate!(email, password)
