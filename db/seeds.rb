@@ -10,4 +10,6 @@
 
 if Role.count.zero?
   Role.create!(name: "super_admin")
+  Role.create!(name: "stall_admin")
+  Role.create!(name: "customer")
 end
