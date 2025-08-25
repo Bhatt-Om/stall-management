@@ -22,29 +22,40 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <!-- Flash Messages -->
-    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md space-y-3">
-      <% if notice %>
-        <div id="flash-notice" 
-            data-controller="flash" 
-            class="flex items-center justify-between bg-green-100 border-l-4 border-green-500 text-green-900 px-4 py-3 rounded shadow">
-          <p class="text-sm font-medium"><%= notice %></p>
-          <button data-action="click->flash#close" class="ml-2 text-green-700 hover:text-green-900">✖</button>
-        </div>
-      <% end %>
+<body class="bg-gray-100 flex">
+  <!-- Sidebar -->
+  <% unless controller_name == "sessions" %>
+    <%= render "layouts/sidebar" %>
+  <% end %>
 
-      <% if alert %>
-        <div id="flash-alert" 
-            data-controller="flash" 
-            class="flex items-center justify-between bg-red-100 border-l-4 border-red-500 text-red-900 px-4 py-3 rounded shadow">
-          <p class="text-sm font-medium"><%= alert %></p>
-          <button data-action="click->flash#close" class="ml-2 text-red-700 hover:text-red-900">✖</button>
-        </div>
-      <% end %>
-    </div>
-    <main class="mx-auto mt-12 px-4 max-w-7xl">
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col min-h-screen">
+
+    <!-- Topbar -->
+    <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b p-4 flex items-center">
+      <!-- Mobile hamburger -->
+      <button id="menu-btn"
+              class="mr-3 p-2 rounded-lg bg-white shadow lg:hidden"
+              aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <h1 class="text-xl font-semibold">Page Title</h1>
+    </header>
+
+    <!-- Flash -->
+    <%= render 'layouts/flash' %>
+
+    <!-- Page content -->
+    <main class="p-6 flex-1">
       <%= yield %>
     </main>
-  </body>
+  </div>
+
+  <!-- Overlay (mobile only) -->
+  <div id="overlay" class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300 z-30 lg:hidden"></div>
+</body>
 </html>
