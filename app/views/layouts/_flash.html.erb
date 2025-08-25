@@ -1,0 +1,19 @@
+<div class="fixed top-4 inset-x-0 flex justify-center z-50 px-4">
+  <div class="w-full max-w-md space-y-3">
+    <% if notice %>
+      <div id="flash-notice"
+          class="flex items-center justify-between bg-green-100 border-l-4 border-green-500 text-green-900 px-4 py-3 rounded shadow">
+        <p class="text-sm font-medium"><%= notice %></p>
+        <button onclick="this.parentElement.remove()" class="ml-2 text-green-700 hover:text-green-900">✖</button>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div id="flash-alert"
+          class="flex items-center justify-between bg-red-100 border-l-4 border-red-500 text-red-900 px-4 py-3 rounded shadow">
+        <p class="text-sm font-medium"><%= alert %></p>
+        <button onclick="this.parentElement.remove()" class="ml-2 text-red-700 hover:text-red-900">✖</button>
+      </div>
+    <% end %>
+  </div>
+</div>
