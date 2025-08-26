@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  draw(:buildings)
   resources :path_configuration, only: [:index]
   namespace :api do
     namespace :v1 do

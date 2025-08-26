@@ -1,0 +1,28 @@
+<%= tag.div data: {
+  controller: "bridge--search",
+  "bridge--search-items-value": @buildings.all.map { |b| { id: b.id, name: b.building_name } }.to_json,
+  "bridge--search-resource-value": "buildings",
+  "bridge--search-icon-value": '<i class="fa-regular fa-building"></i>'
+} %>
+<% unless hotwire_native_app?%>
+  <div id="buildings" class="min-w-full divide-y divide-gray-200 space-y-5">  
+    <% if @buildings.any? %>
+      <% @buildings.each do |building| %>
+        <%= link_to building_path(building), class: "flex items-center space-x-3 py-3 px-4 rounded-md hover:bg-gray-50 transition cursor-pointer" do %>
+          <!-- Building Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 21h18M9 8h6m-6 4h6m2 9V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16h12z" />
+          </svg>
+
+          <!-- Building Name -->
+          <span class="text-lg font-medium text-gray-800">
+            <%= building.building_name %>
+          </span>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p class="text-center my-10">No buildings found.</p>
+    <% end %>
+  </div>
+<% end %>
