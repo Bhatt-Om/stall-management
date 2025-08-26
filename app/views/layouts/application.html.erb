@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head <%= "data-hotwire-native-app" if hotwire_native_app? %> >
     <title><%= content_for(:title) || "Stall Management" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+     <!-- ✅ Add Font Awesome CDN here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
