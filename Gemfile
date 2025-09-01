@@ -67,3 +67,7 @@ end
 gem "devise", "~> 4.9"
 gem "dotenv"
 gem 'devise-tailwinded'
+gem "noticed", "~> 2.8"
+gem "apnotic", "~> 1.7"
+gem "googleauth", "~> 1.9"
+gem 'rack-cors'

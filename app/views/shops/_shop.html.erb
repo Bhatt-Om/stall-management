@@ -1,0 +1,38 @@
+<div id="<%= dom_id shop %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Stall name:</strong>
+    <%= shop.stall_name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall addres:</strong>
+    <%= shop.stall_addres %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall pincode:</strong>
+    <%= shop.stall_pincode %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall city:</strong>
+    <%= shop.stall_city %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall state:</strong>
+    <%= shop.stall_state %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall details:</strong>
+    <%= shop.stall_details %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall link:</strong>
+    <%= shop.stall_link %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Stall registraton status:</strong>
+    <%= shop.stall_registraton_status? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Building:</strong>
+    <%= shop.building_id %>
+  </div>
+</div>

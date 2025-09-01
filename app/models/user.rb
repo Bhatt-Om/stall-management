@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   belongs_to :role, optional: true
 
+  has_many :notification_tokens
+
   before_create :set_default_role, if: -> { role_id.nil? }
 
   def self.authenticate!(email, password)

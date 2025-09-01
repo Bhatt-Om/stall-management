@@ -1,3 +1,6 @@
+<% if user_signed_in? %>
+  <meta data-controller="bridge--notification-token">
+<% end %>
 <div>
   <h1 class="font-bold text-4xl">Customer Dashboard</h1>
   <p>Welcome, <%= @user.email %>!</p>

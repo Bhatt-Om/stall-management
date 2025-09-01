@@ -15,8 +15,8 @@ class PathConfigurationController < ApplicationController
         },
         {
           "patterns": [
-            "/new$",
-            "/edit$"
+            ".*/new$",
+            ".*/edit$"
           ],
           "properties": {
             "context": "modal",

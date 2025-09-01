@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stall_name: MyString
+  stall_addres: MyString
+  stall_pincode: MyString
+  stall_city: MyString
+  stall_state: MyString
+  stall_details: MyText
+  stall_link: MyString
+  stall_registraton_status: false
+  building: one
+
+two:
+  stall_name: MyString
+  stall_addres: MyString
+  stall_pincode: MyString
+  stall_city: MyString
+  stall_state: MyString
+  stall_details: MyText
+  stall_link: MyString
+  stall_registraton_status: false
+  building: two
