@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menu_catogaries
   resources :menus
   namespace :customer do
     get "dashboard", to: "dashboard#index", as: :dashboard
