@@ -1,9 +1,11 @@
+<meta data-controller="bridge--notification-token">
 <%= tag.div data: {
   controller: "bridge--search",
   "bridge--search-items-value": @buildings.all.map { |b| { id: b.id, name: b.building_name } }.to_json,
   "bridge--search-resource-value": "buildings",
   "bridge--search-icon-value": '<i class="fa-regular fa-building"></i>'
 } %>
+<%= link_to "New Building", new_building_path, class: "btn btn-primary" %>
 <% unless hotwire_native_app?%>
   <div id="buildings" class="min-w-full divide-y divide-gray-200 space-y-5">  
     <% if @buildings.any? %>

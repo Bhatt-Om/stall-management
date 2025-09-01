@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   namespace :customer do
     get "dashboard", to: "dashboard#index", as: :dashboard
   end
@@ -23,7 +24,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   draw(:buildings)
-  resources :path_configuration, only: [:index]
+  draw(:shops)
+  draw(:notification_tokens)
+  resources :path_configuration,     only: [:index]
   namespace :api do
     namespace :v1 do
       draw(:roles)

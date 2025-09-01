@@ -60,7 +60,7 @@ class BuildingsController < ApplicationController
 
   def accept_request
     @building.update!(register_status: true)
-
+    NewStoreNotifier.with(building: @building, message: "Your Building #{@building&.building_name} Is registered").deliver(current_user)
     respond_to do |format|
       format.html { redirect_to @building, notice: "Building registration accepted." }
       format.json { render :show, status: :ok, location: @building }
