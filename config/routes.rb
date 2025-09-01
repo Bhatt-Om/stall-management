@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menu_items
   resources :menu_catogaries
   resources :menus
   namespace :customer do
